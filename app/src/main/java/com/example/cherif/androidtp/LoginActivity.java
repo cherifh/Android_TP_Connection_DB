@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
         etEmail = (EditText) findViewById(R.id.email);
         etPassword = (EditText) findViewById(R.id.password);
-
     }
 
 
@@ -61,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
 
         protected void onPreExecute() {
             super.onPreExecute();
-
             //this method will be running on UI thread
             pdLoading.setMessage("\tLoading...");
             pdLoading.setCancelable(false);
@@ -89,7 +87,6 @@ public class LoginActivity extends AppCompatActivity {
             }
             HttpURLConnection urlConnection = null;
             try {
-                //check if not null
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("POST");
                 urlConnection.setDoInput(true);
