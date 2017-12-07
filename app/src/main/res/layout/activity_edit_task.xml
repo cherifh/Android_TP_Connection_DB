@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.cherif.androidtp.EditTaskActivity">
+
+    <EditText
+        android:id="@+id/editTaskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTaskDesc"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="62dp"
+        android:ems="10"
+        android:hint="Task name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTaskDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTaskStatus"
+        android:layout_alignLeft="@+id/editTaskName"
+        android:layout_alignStart="@+id/editTaskName"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/editTaskStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonEditTask"
+        android:layout_alignLeft="@+id/editTaskName"
+        android:layout_alignStart="@+id/editTaskName"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:hint="Status"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/buttonEditTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="196dp"
+        android:layout_marginStart="41dp"
+        android:onClick="editOrDelete"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/textViewFormCreateTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTaskName"
+        android:layout_alignStart="@+id/editTaskName"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="53dp"
+        android:text="Edit a task"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonEditTask"
+        android:layout_alignBottom="@+id/buttonEditTask"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="36dp"
+        android:onClick="editOrDelete"
+        android:text="Delete" />
+
+</RelativeLayout>

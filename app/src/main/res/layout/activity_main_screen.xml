@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cherif.androidtp.MainScreenActivity">
+
+    <TextView
+        android:id="@+id/textViewIndexScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="32sp"
+        android:text="Android TP" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewIndexScreen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="89dp"
+        android:textSize="18sp"
+        android:text="How to connect android app to external DB" />
+
+    <Button
+        android:id="@+id/buttonToRegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="163dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:onClick="toRegisterPage"
+        android:text="REGISTER" />
+
+    <Button
+        android:id="@+id/buttonToLoginPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonToRegisterPage"
+        android:layout_alignBottom="@+id/buttonToRegisterPage"
+        android:layout_alignEnd="@+id/textView4"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:onClick="toLoginPage"
+        android:text="GO TO LOGIN" />
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cherif.androidtp.WelcomeActivity">
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:textSize="20sp"
+        android:text="WELCOME" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Successfully LoggedIn"
+        android:id="@+id/textViewSuccessfullyLogged"
+        android:layout_marginTop="46dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/textViewWelcome"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonNewTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewSuccessfullyLogged"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="75dp"
+        android:layout_toLeftOf="@+id/textViewWelcome"
+        android:layout_toStartOf="@+id/textViewWelcome"
+        android:text="New Task" />
+
+    <Button
+        android:id="@+id/buttonListTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonNewTask"
+        android:layout_alignBottom="@+id/buttonNewTask"
+        android:layout_marginStart="49dp"
+        android:layout_toEndOf="@+id/buttonNewTask"
+        android:text="List tasks" />
+
+
+</RelativeLayout>
