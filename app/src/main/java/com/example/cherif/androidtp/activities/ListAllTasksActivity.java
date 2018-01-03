@@ -1,4 +1,4 @@
-package com.example.cherif.androidtp;
+package com.example.cherif.androidtp.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.cherif.androidtp.utils.ConnectionUtils;
+import com.example.cherif.androidtp.utils.ListViewAdapter;
+import com.example.cherif.androidtp.R;
+import com.example.cherif.androidtp.entity.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,9 +29,8 @@ import java.util.ArrayList;
 public class ListAllTasksActivity extends AppCompatActivity {
 
     ListView listView;
-    String apiKey;
-    //TextView tv;
-    String responseMessage;
+    String apiKey, responseMessage;
+    //url to webservice "/listAllTasks"
     private static final String url_all_tasks = "http://10.0.2.2:80/task_manager/v1/tasks";
     ArrayList<Task> listTasks;
 
@@ -55,21 +59,20 @@ public class ListAllTasksActivity extends AppCompatActivity {
         });
 
         new AsyncListAll().execute();
-   }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1){
-            //reloadActivity();
-            Toast.makeText(ListAllTasksActivity.this, "Edit is OK", Toast.LENGTH_LONG).show();
+            Toast.makeText(ListAllTasksActivity.this, "Task edited successfully !", Toast.LENGTH_LONG).show();
         }else{
-            Log.i("Edit response", "Failed to edit task ");
+            Log.i("[Response from server]", "Failed to edit task ");
         }
     }
 
 
-        class AsyncListAll extends AsyncTask<Void, Void, String> {
+    class AsyncListAll extends AsyncTask<Void, Void, String> {
 
         ProgressDialog pdLoading = new ProgressDialog(ListAllTasksActivity.this);
 
@@ -84,8 +87,6 @@ public class ListAllTasksActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Void... voids) {
-            // Ouverture de la connexion
-            //Log.i("Connection to server...", "Trying to connect...");
 
             URL url = null;
             JSONArray listTask = new JSONArray();
@@ -102,9 +103,9 @@ public class ListAllTasksActivity extends AppCompatActivity {
                 urlConnection.setDoInput(true);
                 urlConnection.setDoOutput(false);
                 urlConnection.setUseCaches(false);
-                // Connexion à l'URL
+                // Connexion to the URL
                 urlConnection.connect();
-                Log.i("Response code ", String.valueOf(urlConnection.getResponseCode()));
+                Log.i("[ Connexion ]", String.valueOf(urlConnection.getResponseCode()));
 
                 if(urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK){
                     String responseMess = ConnectionUtils.receiveResponse(urlConnection);
@@ -112,9 +113,7 @@ public class ListAllTasksActivity extends AppCompatActivity {
                     responseMessage = json.getString("tasks");
                     listTask = json.getJSONArray("tasks");
                     Log.i("Response mess ", responseMessage);
-                    Log.i("Array of tasks", listTask.toString());
-                    //String listTask = json.getString("apiKey");
-                    //responseMessage = responseMess;
+                    Log.i("[List of tasks]", listTask.toString());
                 }
             } catch (IOException e) {
                 e.printStackTrace();

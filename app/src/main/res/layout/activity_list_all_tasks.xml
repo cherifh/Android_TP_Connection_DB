@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cherif.androidtp.ListAllTasksActivity">
+    tools:context="com.example.cherif.androidtp.activities.ListAllTasksActivity">
 
     <!-- this is our listview where we will display the fetched data -->
     <ListView

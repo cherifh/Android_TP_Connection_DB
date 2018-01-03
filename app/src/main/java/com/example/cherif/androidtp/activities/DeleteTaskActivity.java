@@ -1,7 +1,9 @@
-package com.example.cherif.androidtp;
+package com.example.cherif.androidtp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.cherif.androidtp.R;
 
 public class DeleteTaskActivity extends AppCompatActivity {
 

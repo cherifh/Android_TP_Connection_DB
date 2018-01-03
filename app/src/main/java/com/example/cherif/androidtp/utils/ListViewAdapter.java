@@ -1,4 +1,4 @@
-package com.example.cherif.androidtp;
+package com.example.cherif.androidtp.utils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.cherif.androidtp.R;
+import com.example.cherif.androidtp.entity.Task;
+
 import java.util.ArrayList;
 
-/**
- * Created by A654911 on 06/12/2017.
- */
 
 public class ListViewAdapter extends BaseAdapter{
 
@@ -53,9 +53,7 @@ public class ListViewAdapter extends BaseAdapter{
         Task currTask = (Task)getItem(position);
         viewHolder.taskName.setText(currTask.getTask());
         viewHolder.taskDesc.setText(currTask.getDescription());
-
         return convertView;
-
     }
 
     class ViewHolder {

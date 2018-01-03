@@ -1,11 +1,6 @@
-package com.example.cherif.androidtp;
+package com.example.cherif.androidtp.entity;
 
 import java.io.Serializable;
-import java.util.Date;
-
-/**
- * Created by A654911 on 06/12/2017.
- */
 
 public class Task implements Serializable{
 
